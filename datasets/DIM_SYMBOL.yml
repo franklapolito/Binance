@@ -1,0 +1,16 @@
+unique_name: DIM_SYMBOL
+object_type: dataset
+label: DIM_SYMBOL
+columns:
+  - name: SYMBOL_SK
+    data_type: decimal(38,0)
+  - name: SYMBOL_NAME
+    data_type: string
+  - name: BASE_ASSET
+    data_type: string
+  - name: QUOTE_ASSET
+    data_type: string
+  - name: SECTOR
+    data_type: string
+connection_id: con_BINANCE_TEST_BINANCE_SAMPLE
+table: DIM_SYMBOL

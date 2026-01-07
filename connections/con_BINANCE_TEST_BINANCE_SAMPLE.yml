@@ -1,0 +1,6 @@
+unique_name: con_BINANCE_TEST_BINANCE_SAMPLE
+object_type: connection
+label: con_BINANCE_TEST_BINANCE_SAMPLE
+as_connection: Snowflake Partner
+database: BINANCE_TEST
+schema: BINANCE_SAMPLE

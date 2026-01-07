@@ -1,0 +1,30 @@
+unique_name: F_BINANCE_KLINE
+object_type: dataset
+label: F_BINANCE_KLINE
+columns:
+  - name: TRANS_ID
+    data_type: string
+  - name: SYMBOL_SK
+    data_type: decimal(38,0)
+  - name: DATE_KEY
+    data_type: decimal(38,0)
+  - name: TIME_KEY
+    data_type: decimal(38,0)
+  - name: OPEN_PRICE
+    data_type: double
+  - name: HIGH_PRICE
+    data_type: double
+  - name: LOW_PRICE
+    data_type: double
+  - name: CLOSE_PRICE
+    data_type: double
+  - name: VOLUME_BASE
+    data_type: double
+  - name: VOLUME_QUOTE
+    data_type: double
+  - name: TAKER_BUY_VOL
+    data_type: double
+  - name: TRADE_COUNT
+    data_type: decimal(38,0)
+connection_id: con_BINANCE_TEST_BINANCE_SAMPLE
+table: F_BINANCE_KLINE

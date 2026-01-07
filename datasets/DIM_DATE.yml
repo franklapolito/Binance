@@ -1,0 +1,18 @@
+unique_name: DIM_DATE
+object_type: dataset
+label: DIM_DATE
+columns:
+  - name: DATE_KEY
+    data_type: decimal(38,0)
+  - name: FULL_DATE
+    data_type: date
+  - name: CAL_YEAR
+    data_type: decimal(38,0)
+  - name: CAL_MONTH
+    data_type: decimal(38,0)
+  - name: CAL_DAY
+    data_type: decimal(38,0)
+  - name: DAY_OF_WEEK
+    data_type: string
+connection_id: con_BINANCE_TEST_BINANCE_SAMPLE
+table: DIM_DATE

@@ -1,0 +1,6 @@
+version: 1
+unique_name: FL/Binance_Testing
+object_type: catalog
+label: FL/Binance_Testing
+aggressive_agg_promotion: false
+build_speculative_aggs: true

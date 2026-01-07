@@ -1,0 +1,16 @@
+unique_name: DIM_TIME
+object_type: dataset
+label: DIM_TIME
+columns:
+  - name: TIME_KEY
+    data_type: decimal(38,0)
+  - name: HOUR_24
+    data_type: decimal(38,0)
+  - name: MINUTE
+    data_type: decimal(38,0)
+  - name: AM_PM
+    data_type: string
+  - name: MARKET_SESSION
+    data_type: string
+connection_id: con_BINANCE_TEST_BINANCE_SAMPLE
+table: DIM_TIME
