@@ -1,0 +1,8 @@
+unique_name: m_volume_usdt
+object_type: metric
+label: Volume (USDT)
+description: "Total trading volume in USDT."
+calculation_method: sum
+dataset: ds_f_binance_kline
+column: VOLUME_QUOTE
+format: "$#,##0.00"
