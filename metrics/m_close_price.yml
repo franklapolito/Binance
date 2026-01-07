@@ -1,0 +1,14 @@
+unique_name: m_close_price
+object_type: metric
+label: Close Price
+description: "The closing price of the asset at the end of the selected period."
+calculation_method: sum
+dataset: ds_f_binance_kline
+column: CLOSE_PRICE
+format: "$#,##0.00"
+
+semi_additive:
+  position: last_child
+  relationships: 
+    - rel_kline_to_date  # Don't sum across dates, take the last day
+    - rel_kline_to_time  # Don't sum across minutes, take the last minute
