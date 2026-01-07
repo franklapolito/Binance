@@ -1,0 +1,52 @@
+unique_name: mdl_crypto_market
+object_type: model
+label: Crypto Market Activity
+visible: true
+description: "Agent-ready model for Binance Spot data focusing on Momentum and Whales."
+
+# 1. Relationships (The Joins)
+# These bind the Fact Dataset columns to the Dimension Levels
+relationships:
+  - unique_name: rel_kline_to_asset
+    from:
+      dataset: ds_f_binance_kline
+      join_columns:
+        - SYMBOL_SK
+    to:
+      dimension: dim_assets
+      level: l_symbol  # Joins to the lowest grain of the Asset dimension
+
+  - unique_name: rel_kline_to_date
+    from:
+      dataset: ds_f_binance_kline
+      join_columns:
+        - DATE_KEY
+    to:
+      dimension: dim_date
+      level: l_day     # Joins to the lowest grain of the Date dimension
+
+  - unique_name: rel_kline_to_time
+    from:
+      dataset: ds_f_binance_kline
+      join_columns:
+        - TIME_KEY
+    to:
+      dimension: dim_time
+      level: l_minute  # Joins to the lowest grain of the Time dimension
+
+# 2. Dimensions included in this model
+dimensions:
+  - dim_assets
+  - dim_date
+  - dim_time
+
+# 3. Metrics included in this model (References to Metric objects)
+metrics:
+  - unique_name: m_volume_usdt
+    folder: Liquidity
+  - unique_name: m_close_price
+    folder: Price Action
+  - unique_name: m_buy_pressure_ratio
+    folder: Sentiment
+  - unique_name: m_trades_count
+    folder: Liquidity
