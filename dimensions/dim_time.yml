@@ -1,0 +1,32 @@
+unique_name: dim_time
+object_type: dimension
+label: Time of Day
+type: standard
+
+hierarchies:
+  - unique_name: h_intraday
+    label: Intraday
+    levels:
+      - unique_name: l_session
+      - unique_name: l_hour
+      - unique_name: l_minute
+
+level_attributes:
+  - unique_name: l_session
+    label: Market Session
+    dataset: ds_dim_time
+    key_columns: ["MARKET_SESSION"]
+    name_column: "MARKET_SESSION"
+
+  - unique_name: l_hour
+    label: Hour of Day
+    dataset: ds_dim_time
+    key_columns: ["HOUR_24"]
+    name_column: "HOUR_24"
+
+  - unique_name: l_minute
+    label: Minute
+    dataset: ds_dim_time
+    key_columns: ["TIME_KEY"]
+    name_column: "MINUTE"
+    is_unique_key: true
