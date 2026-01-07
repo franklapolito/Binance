@@ -1,0 +1,8 @@
+unique_name: m_trades_count
+object_type: metric
+label: Trade Count
+description: "Total number of executed trades."
+calculation_method: sum
+dataset: ds_f_binance_kline
+column: TRADE_COUNT
+format: "#,##0"
