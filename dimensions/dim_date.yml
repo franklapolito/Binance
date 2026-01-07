@@ -1,0 +1,35 @@
+unique_name: dim_date
+object_type: dimension
+label: Calendar Date
+type: time
+
+hierarchies:
+  - unique_name: h_calendar
+    label: Calendar
+    levels:
+      - unique_name: l_year
+      - unique_name: l_month
+      - unique_name: l_day
+
+level_attributes:
+  - unique_name: l_year
+    label: Year
+    dataset: ds_dim_date
+    key_columns: ["CAL_YEAR"]
+    name_column: "CAL_YEAR"
+    time_unit: year
+
+  - unique_name: l_month
+    label: Month
+    dataset: ds_dim_date
+    key_columns: ["CAL_YEAR", "CAL_MONTH"] # Compound key ensures uniqueness
+    name_column: "CAL_MONTH"
+    time_unit: month
+
+  - unique_name: l_day
+    label: Day
+    dataset: ds_dim_date
+    key_columns: ["DATE_KEY"]
+    name_column: "FULL_DATE"
+    time_unit: day
+    is_unique_key: true
