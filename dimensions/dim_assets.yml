@@ -1,0 +1,34 @@
+unique_name: dim_assets
+object_type: dimension
+label: Assets
+type: standard
+
+# A. The Hierarchy (Path for the Agent)
+hierarchies:
+  - unique_name: h_asset_class
+    label: Asset Classification
+    levels:
+      - unique_name: l_sector
+      - unique_name: l_base_asset
+      - unique_name: l_symbol
+
+# B. The Attribute Definitions (Mapping to Dataset)
+level_attributes:
+  - unique_name: l_sector
+    label: Sector
+    dataset: ds_dim_symbol
+    key_columns: ["SECTOR"]
+    name_column: "SECTOR"
+
+  - unique_name: l_base_asset
+    label: Base Asset
+    dataset: ds_dim_symbol
+    key_columns: ["BASE_ASSET"]
+    name_column: "BASE_ASSET"
+
+  - unique_name: l_symbol
+    label: Symbol
+    dataset: ds_dim_symbol
+    key_columns: ["SYMBOL_SK"]
+    name_column: "SYMBOL_NAME"
+    is_unique_key: true
